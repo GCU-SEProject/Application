@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="platform_array_placeholder">
+        <item>Platform ▼</item>
+        <item>PC</item>
+        <item>Mobile</item>
+        <item>Console</item>
+    </string-array>
+    <string-array name="genre_array_placeholder">
+        <item>Genre ▼</item>
+        <item>RPG</item>
+        <item>Action</item>
+        <item>Simulation</item>
+    </string-array>
+    <string-array name="playtime_sort_options">
+        <item>@string/playtime_sort_default</item>
+        <item>@string/playtime_sort_asc</item>
+        <item>@string/playtime_sort_desc</item>
+    </string-array>
+</resources>

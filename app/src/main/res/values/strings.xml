@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">SETP</string>
+
+    <string name="main_game">GAME</string>
+    <string name="main_encyclopedia">ENCYCLOPEDIA</string>
+    <string name="main_video">VIDEO</string>
+    <string name="main_news">NEWS</string>
+    <string name="main_api">API</string>
+    <string name="main_option">OPTION</string>
+
+    <string name="search_hint">검색어를 입력하세요...</string>
+    <string name="search_icon_desc">Search Icon</string>
+
+    <string name="game_filter_platform_prompt">Platform</string>
+    <string name="game_filter_genre_prompt">Genre</string>
+    <string name="game_filter_playtime_prompt">Playtime</string>
+
+    <string name="playtime_sort_default">Playtime ▼</string>
+    <string name="playtime_sort_asc">Asc</string>
+    <string name="playtime_sort_desc">Desc</string>
+
+    <string name="api_feedback_title">API USAGE FEEDBACK</string>
+    <string name="naver_open_api_left">NAVER OPEN API LEFT%</string>
+    <string name="youtube_data_api_left">YOUTUBE DATA API LEFT%</string>
+    <string name="game_search_api_left">GAME SEARCH API LEFT%</string>
+    <string name="news_search_api_left">NEWS SEARCH API LEFT%</string>
+    <string name="request_count">request count = %1$d</string>
+    <string name="remaining_quota">remaining quota = %1$d</string>
+
+    <string name="placeholder_title">항목 제목</string>
+    <string name="placeholder_description">항목에 대한 간단한 설명입니다.</string>
+
+    <string name="title_encyclopedia">백과사전 검색</string>
+    <string name="title_video">비디오 검색</string>
+    <string name="title_news">뉴스 검색</string>
+    <string name="title_game_search">게임 검색</string>
+    <string name="title_api_feedback">API 사용량 피드백</string>
+    <string name="option_toast_message">옵션 기능은 준비 중입니다.</string>
+</resources>
