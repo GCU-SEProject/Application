@@ -1,9 +1,11 @@
-package com.example.setp;
+package com.example.setp.apifeedback;
 
 import android.os.Bundle;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.setp.R;
 
 public class ApiFeedbackActivity extends AppCompatActivity {
 

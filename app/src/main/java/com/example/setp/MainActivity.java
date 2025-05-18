@@ -10,6 +10,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.setp.apifeedback.ApiFeedbackActivity;
+import com.example.setp.encyclopedia.EncyclopediaActivity;
+import com.example.setp.game.GameActivity;
+import com.example.setp.news.NewsActivity;
+import com.example.setp.video.VideoActivity;
 import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         btnApi = findViewById(R.id.btnApi);
         btnOption = findViewById(R.id.btnOption);
 
-        btnGame.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, GameSearchActivity.class)));
+        btnGame.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, GameActivity.class)));
         btnEncyclopedia.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, EncyclopediaActivity.class)));
         btnVideo.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, VideoActivity.class)));
         btnNews.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, NewsActivity.class)));

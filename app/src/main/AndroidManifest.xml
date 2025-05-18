@@ -23,11 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EncyclopediaActivity" />
-        <activity android:name=".VideoActivity" />
-        <activity android:name=".NewsActivity" />
-        <activity android:name=".GameSearchActivity" />
-        <activity android:name=".ApiFeedbackActivity" />
+        <activity android:name=".encyclopedia.EncyclopediaActivity" />
+        <activity android:name=".video.VideoActivity" />
+        <activity android:name=".news.NewsActivity" />
+        <activity android:name=".game.GameActivity" />
+        <activity android:name=".apifeedback.ApiFeedbackActivity" />
     </application>
 
 </manifest>

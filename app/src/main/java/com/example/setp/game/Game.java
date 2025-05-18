@@ -1,4 +1,4 @@
-package com.example.setp;
+package com.example.setp.game;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
@@ -32,4 +32,6 @@ public class Game {
 
     @SerializedName("description")
     private String description;
+
+    private boolean expanded = false;
 }

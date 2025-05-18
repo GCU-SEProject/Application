@@ -1,31 +1,29 @@
-package com.example.setp;
+package com.example.setp.video;
 
 import android.os.Bundle;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.setp.R;
+
 import java.util.ArrayList;
 
-public class EncyclopediaActivity extends AppCompatActivity {
+public class VideoActivity extends AppCompatActivity {
 
     private EditText etSearchQuery;
     private RecyclerView rvSearchResults;
-    private SearchResultAdapter adapter;
-    private ArrayList<DataModel> searchResultsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_common);
-        setTitle(getString(R.string.title_encyclopedia));
+        setTitle(getString(R.string.title_video));
 
         etSearchQuery = findViewById(R.id.etSearchQuery);
         rvSearchResults = findViewById(R.id.rvSearchResults);
 
-        searchResultsList = new ArrayList<>();
-        adapter = new SearchResultAdapter(this, searchResultsList);
         rvSearchResults.setLayoutManager(new LinearLayoutManager(this));
-        rvSearchResults.setAdapter(adapter);
     }
 }

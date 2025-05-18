@@ -1,4 +1,4 @@
-package com.example.setp;
+package com.example.setp.game;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.setp.R;
 import com.example.setp.network.ApiService;
 import com.example.setp.network.RetrofitClient;
 
@@ -26,7 +27,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class GameSearchActivity extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity {
 
     private static final String TAG = "GameSearchActivity";
 
@@ -36,7 +37,7 @@ public class GameSearchActivity extends AppCompatActivity {
     private RecyclerView rvGameSearchResults;
     private ProgressBar progressBarSearch;
 
-    private GameResultAdapter gameAdapter;
+    private GameAdapter gameAdapter;
     private ArrayList<Game> gameResultsList;
 
     private String selectedPlatform = "";
@@ -48,7 +49,7 @@ public class GameSearchActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_search);
+        setContentView(R.layout.activity_search_game);
         setTitle(getString(R.string.title_game_search));
 
         apiService = RetrofitClient.getApiService();
@@ -117,7 +118,7 @@ public class GameSearchActivity extends AppCompatActivity {
 
     private void setupRecyclerView() {
         gameResultsList = new ArrayList<>();
-        gameAdapter = new GameResultAdapter(this, gameResultsList);
+        gameAdapter = new GameAdapter(this, gameResultsList);
         rvGameSearchResults.setLayoutManager(new LinearLayoutManager(this));
         rvGameSearchResults.setAdapter(gameAdapter);
     }
@@ -164,12 +165,12 @@ public class GameSearchActivity extends AppCompatActivity {
                         if (response.isSuccessful() && response.body() != null) {
                             List<Game> games = response.body();
                             if (games.isEmpty()) {
-                                Toast.makeText(GameSearchActivity.this, "검색 결과가 없습니다.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(GameActivity.this, "검색 결과가 없습니다.", Toast.LENGTH_SHORT).show();
                             }
                             gameAdapter.updateData(games);
                             Log.d(TAG, "Search successful. Games found: " + games.size());
                         } else {
-                            Toast.makeText(GameSearchActivity.this, "검색에 실패했습니다 (코드: " + response.code() + ")", Toast.LENGTH_LONG).show();
+                            Toast.makeText(GameActivity.this, "검색에 실패했습니다 (코드: " + response.code() + ")", Toast.LENGTH_LONG).show();
                             Log.e(TAG, "Search failed. Code: " + response.code() + ", Message: " + response.message());
                             try {
                                 if (response.errorBody() != null) {
@@ -186,7 +187,7 @@ public class GameSearchActivity extends AppCompatActivity {
                         progressBarSearch.setVisibility(View.GONE);
                         rvGameSearchResults.setVisibility(View.VISIBLE);
 
-                        Toast.makeText(GameSearchActivity.this, "네트워크 오류: " + t.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(GameActivity.this, "네트워크 오류: " + t.getMessage(), Toast.LENGTH_LONG).show();
                         Log.e(TAG, "Network request failed", t);
                     }
                 });

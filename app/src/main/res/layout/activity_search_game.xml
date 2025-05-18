@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:fitsSystemWindows="true"
-    tools:context=".GameSearchActivity">
+    tools:context=".game.GameActivity">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -139,7 +139,7 @@
                 android:id="@+id/rvGameSearchResults"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:listitem="@layout/list_item_search_result"
+                tools:listitem="@layout/list_item_game_result"
                 android:contentDescription="@string/game_search_results_list_desc" />
         </com.google.android.material.card.MaterialCardView>
 
