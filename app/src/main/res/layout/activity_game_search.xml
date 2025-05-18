@@ -31,12 +31,17 @@
 
             <ImageView
                 android:id="@+id/imgGameSearchIcon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="12dp"
                 android:src="@drawable/ic_search"
                 app:tint="@color/dark_gray"
                 android:contentDescription="@string/search_icon_desc"
-                android:layout_marginEnd="8dp"/>
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless" />
 
             <EditText
                 android:id="@+id/etGameSearchQuery"
@@ -46,9 +51,15 @@
                 android:hint="@string/search_hint"
                 android:inputType="text"
                 android:maxLines="1"
+                android:imeOptions="actionSearch"
                 android:background="@android:color/transparent"
                 android:paddingTop="16dp"
-                android:paddingBottom="16dp"/>
+                android:paddingBottom="16dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textColorHint="@color/dark_gray"
+                android:textColor="@color/black"
+                android:autofillHints="name" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -73,7 +84,8 @@
             android:paddingBottom="12dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            android:layout_marginEnd="4dp"/>
+            android:layout_marginEnd="4dp"
+            android:minHeight="48dp" />
 
         <Spinner
             android:id="@+id/spinnerGenre"
@@ -89,7 +101,8 @@
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"/>
+            android:layout_marginEnd="4dp"
+            android:minHeight="48dp" />
 
         <Spinner
             android:id="@+id/spinnerPlaytime"
@@ -104,23 +117,38 @@
             android:paddingBottom="12dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            android:layout_marginStart="4dp"/>
+            android:layout_marginStart="4dp"
+            android:minHeight="48dp" />
     </LinearLayout>
 
-    <com.google.android.material.card.MaterialCardView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        app:cardCornerRadius="0dp"
-        app:strokeColor="@color/black"
-        app:strokeWidth="1dp">
+        android:layout_marginEnd="24dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvGameSearchResults"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/list_item_search_result"/>
-    </com.google.android.material.card.MaterialCardView>
+            app:cardCornerRadius="0dp"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvGameSearchResults"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/list_item_search_result"
+                android:contentDescription="@string/game_search_results_list_desc" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <ProgressBar
+            android:id="@+id/progressBarSearch"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
 </LinearLayout>
