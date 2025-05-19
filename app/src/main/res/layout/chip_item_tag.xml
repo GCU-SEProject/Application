@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.chip.Chip
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.MaterialComponents.Chip.Entry"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Sample Tag"
+    app:closeIconVisible="true"
+    app:chipMinHeight="24dp"
+    android:textSize="12sp"
+    app:chipCornerRadius="12dp"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
+    app:chipStartPadding="6dp"
+    app:chipEndPadding="4dp"
+    app:closeIconSize="18dp"
+    app:iconStartPadding="0dp"
+    app:textStartPadding="0dp"
+    android:layout_marginStart="2dp"
+    android:layout_marginEnd="2dp"/>

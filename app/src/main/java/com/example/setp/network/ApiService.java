@@ -8,7 +8,8 @@ import retrofit2.http.Query;
 
 public interface ApiService {
 
-    @GET("search/game")// API Gateway EndPoint
+
+    @GET("/game-service/search/game")// API Gateway EndPoint
     Call<List<Game>> searchGamesByTags(@Query("tag") List<String> tags);
 
     // ToDo: Other API EndPoint Definition

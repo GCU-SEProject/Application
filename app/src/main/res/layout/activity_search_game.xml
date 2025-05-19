@@ -5,96 +5,97 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="16dp"
     android:fitsSystemWindows="true"
     tools:context=".game.GameActivity">
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="2dp"
-        app:strokeColor="@color/medium_gray"
-        app:strokeWidth="1dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp">
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            >
+            android:layout_marginEnd="4dp"
+            android:gravity="center">
             <Button
-                android:id="@+id/addTagBtn1"
+                android:id="@+id/addTagBtnGenre"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:text="Genre" />
 
             <Button
-                android:id="@+id/addTagBtn2"
+                android:id="@+id/addTagBtnPricing"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BM" />
+                android:layout_height="40dp"
+                android:text="Pricing" />
 
             <Button
-                android:id="@+id/addTagBtn3"
+                android:id="@+id/addTagBtnGameMode"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:text="GameMode" />
-
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            >
-
-
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center">
             <Button
-                android:id="@+id/addTagBtn4"
+                android:id="@+id/addTagBtnLanguage"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:text="Language" />
 
             <Button
-                android:id="@+id/addTagBtn5"
+                android:id="@+id/addTagBtnPlatform"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:text="Platform" />
-            <ImageButton
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:id="@+id/searchTagBtn"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_search"
-                />
 
+            <Button
+                android:id="@+id/addTagBtnStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Style" />
         </LinearLayout>
 
+        <ImageButton
+            android:id="@+id/searchTagBtn"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/ic_search"
+            android:contentDescription="@string/search_icon_desc"
+            android:background="@color/light_gray"
+            android:padding="8dp"
+            app:tint="@color/dark_gray"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp" />
     </LinearLayout>
 
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupSelectedTags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:singleLine="false"
+        app:chipSpacingHorizontal="6dp"
+        app:chipSpacingVertical="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="0dp"/>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -102,14 +103,12 @@
         android:layout_weight="1"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp">
-
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:cardCornerRadius="0dp"
             app:strokeColor="@color/black"
             app:strokeWidth="1dp">
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvGameSearchResults"
                 android:layout_width="match_parent"
@@ -117,7 +116,6 @@
                 tools:listitem="@layout/list_item_game_result"
                 android:contentDescription="@string/game_search_results_list_desc" />
         </com.google.android.material.card.MaterialCardView>
-
         <ProgressBar
             android:id="@+id/progressBarSearch"
             style="?android:attr/progressBarStyleLarge"
@@ -126,24 +124,4 @@
             android:layout_gravity="center"
             android:visibility="gone" />
     </FrameLayout>
-
-    <ImageView
-        android:id="@+id/imgGameSearchIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:clickable="true"
-        android:contentDescription="@string/search_icon_desc"
-        android:focusable="true"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        android:padding="12dp"
-        android:src="@drawable/ic_search"
-        app:tint="@color/dark_gray" />
-
-    <Button
-        android:id="@+id/addTagBtn6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Style" />
 </LinearLayout>
