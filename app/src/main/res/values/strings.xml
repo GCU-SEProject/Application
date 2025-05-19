@@ -9,17 +9,22 @@
     <string name="main_option">OPTION</string>
 
     <string name="search_hint">검색어를 입력하세요...</string>
-    <string name="search_icon_desc">Search Icon</string>
-
-    <string name="game_filter_platform_prompt">Platform</string>
-    <string name="game_filter_genre_prompt">Genre</string>
-    <string name="game_filter_playtime_prompt">Playtime</string>
-
-    <string name="playtime_sort_default">Playtime ▼</string>
-    <string name="playtime_sort_asc">Asc</string>
-    <string name="playtime_sort_desc">Desc</string>
+    <string name="tag_category_genre">장르 태그 선택</string>
+    <string name="tag_category_pricing">가격/BM 태그 선택</string>
+    <string name="tag_category_gamemode">게임모드 태그 선택</string>
+    <string name="tag_category_language">언어 태그 선택</string>
+    <string name="tag_category_platform">플랫폼 태그 선택</string>
+    <string name="tag_category_style">스타일 태그 선택</string>
+    <string name="dialog_ok">확인</string>
+    <string name="dialog_cancel">취소</string>
+    <string name="dialog_clear_all_category">이 카테고리 모두 해제</string>
+    <string name="toast_select_tags_first">검색할 태그를 하나 이상 선택해주세요.</string>
+    <string name="toast_no_search_results">선택한 태그에 해당하는 게임이 없습니다.</string>
+    <string name="toast_search_failed_code">검색에 실패했습니다 (코드: %1$d)</string>
+    <string name="toast_network_error">네트워크 오류: %1$s</string>
     <string name="free_to_play">무료</string>
     <string name="game_search_results_list_desc">게임 검색 결과 목록</string>
+    <string name="search_icon_desc">검색 아이콘</string>
 
     <string name="api_feedback_title">API USAGE FEEDBACK</string>
     <string name="naver_open_api_left">NAVER OPEN API LEFT%</string>

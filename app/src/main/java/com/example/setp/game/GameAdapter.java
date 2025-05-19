@@ -50,6 +50,7 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder> {
             holder.tvItemPrice.setVisibility(View.VISIBLE);
         } else {
             holder.tvItemPrice.setText(context.getString(R.string.free_to_play));
+            holder.tvItemPrice.setVisibility(View.VISIBLE);
         }
 
         holder.tvItemGameId.setText("ID: " + item.getId());
