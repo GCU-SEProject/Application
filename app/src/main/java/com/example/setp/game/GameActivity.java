@@ -150,12 +150,7 @@ public class GameActivity extends AppCompatActivity {
         gameAdapter.notifyDataSetChanged();
 
 
-        Log.d(TAG, "Searching games - Query: '" + searchQuery +
-                "', Platform: '" + selectedPlatform +
-                "', Genre: '" + selectedGenre +
-                "', Sort: '" + selectedPlaytimeSortOrder + "'");
-
-        apiService.searchGames(searchQuery, selectedPlatform, selectedGenre, selectedPlaytimeSortOrder)
+        apiService.searchGames(searchQuery)
                 .enqueue(new Callback<List<Game>>() {
                     @Override
                     public void onResponse(Call<List<Game>> call, Response<List<Game>> response) {

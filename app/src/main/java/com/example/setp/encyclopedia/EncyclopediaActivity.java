@@ -16,7 +16,7 @@ public class EncyclopediaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_common);
+        setContentView(R.layout.activity_search_encyclopedia);
         setTitle(getString(R.string.title_encyclopedia));
 
         etSearchQuery = findViewById(R.id.etSearchQuery);

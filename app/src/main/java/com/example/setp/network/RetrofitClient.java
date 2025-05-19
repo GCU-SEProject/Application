@@ -6,7 +6,7 @@ import okhttp3.OkHttpClient;
 
 public class RetrofitClient {
 
-    private static final String BASE_URL = "http://221.163.123.181:8080/"; // API Gateway address
+    private static final String BASE_URL = "http://127.0.0.1:8080/"; // API Gateway address
     private static Retrofit retrofit = null;
 
     public static Retrofit getClient() {

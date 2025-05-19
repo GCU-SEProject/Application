@@ -28,98 +28,73 @@
             android:gravity="center_vertical"
             android:paddingStart="12dp"
             android:paddingEnd="12dp">
-
-            <ImageView
-                android:id="@+id/imgGameSearchIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
-                android:padding="12dp"
-                android:src="@drawable/ic_search"
-                app:tint="@color/dark_gray"
-                android:contentDescription="@string/search_icon_desc"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="?attr/selectableItemBackgroundBorderless" />
-
-            <EditText
-                android:id="@+id/etGameSearchQuery"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/search_hint"
-                android:inputType="text"
-                android:maxLines="1"
-                android:imeOptions="actionSearch"
-                android:background="@android:color/transparent"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:textColorHint="@color/dark_gray"
-                android:textColor="@color/black"
-                android:autofillHints="name" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="16dp"
         android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp">
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <Spinner
-            android:id="@+id/spinnerPlatform"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:entries="@array/platform_array_placeholder"
-            android:prompt="@string/game_filter_platform_prompt"
-            style="@style/Widget.AppCompat.Spinner.DropDown"
-            android:background="@drawable/spinner_border_outlined"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:layout_marginEnd="4dp"
-            android:minHeight="48dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <Button
+                android:id="@+id/addTagBtn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Genre" />
 
-        <Spinner
-            android:id="@+id/spinnerGenre"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:entries="@array/genre_array_placeholder"
-            android:prompt="@string/game_filter_genre_prompt"
-            style="@style/Widget.AppCompat.Spinner.DropDown"
-            android:background="@drawable/spinner_border_outlined"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
-            android:minHeight="48dp" />
+            <Button
+                android:id="@+id/addTagBtn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BM" />
 
-        <Spinner
-            android:id="@+id/spinnerPlaytime"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:entries="@array/playtime_sort_options"
-            android:prompt="@string/game_filter_playtime_prompt"
-            style="@style/Widget.AppCompat.Spinner.DropDown"
-            android:background="@drawable/spinner_border_outlined"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:layout_marginStart="4dp"
-            android:minHeight="48dp" />
+            <Button
+                android:id="@+id/addTagBtn3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GameMode" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+            <Button
+                android:id="@+id/addTagBtn4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Language" />
+
+            <Button
+                android:id="@+id/addTagBtn5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Platform" />
+            <ImageButton
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:id="@+id/searchTagBtn"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_search"
+                />
+
+        </LinearLayout>
+
     </LinearLayout>
+
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -151,4 +126,24 @@
             android:layout_gravity="center"
             android:visibility="gone" />
     </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imgGameSearchIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:contentDescription="@string/search_icon_desc"
+        android:focusable="true"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:src="@drawable/ic_search"
+        app:tint="@color/dark_gray" />
+
+    <Button
+        android:id="@+id/addTagBtn6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Style" />
 </LinearLayout>

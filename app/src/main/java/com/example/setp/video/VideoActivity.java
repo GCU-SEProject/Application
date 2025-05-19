@@ -18,7 +18,7 @@ public class VideoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_common);
+        setContentView(R.layout.activity_search_video);
         setTitle(getString(R.string.title_video));
 
         etSearchQuery = findViewById(R.id.etSearchQuery);

@@ -8,15 +8,8 @@ import retrofit2.http.Query;
 
 public interface ApiService {
 
-    // Base URL: http://221.163.123.181:8080/
-
-    @GET("search/game") // API Gateway EndPoint
-    Call<List<Game>> searchGames(
-            @Query("query") String searchQuery,
-            @Query("platform") String platform,
-            @Query("genre") String genre,
-            @Query("time") String playtimeSortOrder
-    );
+    @GET("search/game")// API Gateway EndPoint
+    Call<List<Game>> searchGamesByTags(@Query("tag") List<String> tags);
 
     // ToDo: Other API EndPoint Definition
 }
