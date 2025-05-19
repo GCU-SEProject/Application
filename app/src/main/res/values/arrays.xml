@@ -1,20 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="platform_array_placeholder">
-        <item>Platform ▼</item>
+    <string-array name="game_tags_genre">
+        <item>FPS</item>
+        <item>TPS</item>
+        <item>MOBA</item>
+        <item>MMORPG</item>
+        <item>Action</item>
+        <item>Adventure</item>
+        <item>Puzzle</item>
+        <item>Simulation</item>
+        <item>Strategy</item>
+        <item>Rhythm</item>
+        <item>Sports</item>
+        <item>Racing</item>
+        <item>Sandbox</item>
+        <item>Horror</item>
+    </string-array>
+
+    <string-array name="game_tags_pricing">
+        <item>Free</item>
+        <item>Freemium</item>
+        <item>Subscription</item>
+        <item>Paid</item>
+    </string-array>
+
+    <string-array name="game_tags_playstyle">
+        <item>Singleplayer</item>
+        <item>Multiplayer</item>
+        <item>OnlineOnly</item>
+        <item>LocalCoop</item>
+        <item>PvP</item>
+        <item>PvE</item>
+        <item>Teamplay</item>
+        <item>BattleRoyale</item>
+    </string-array>
+
+    <string-array name="game_tags_language">
+        <item>Korean</item>
+        <item>English</item>
+        <item>Japanese</item>
+    </string-array>
+
+    <string-array name="game_tags_platform">
         <item>PC</item>
         <item>Mobile</item>
         <item>Console</item>
+        <item>Crossplay</item>
     </string-array>
-    <string-array name="genre_array_placeholder">
-        <item>Genre ▼</item>
-        <item>RPG</item>
-        <item>Action</item>
-        <item>Simulation</item>
-    </string-array>
-    <string-array name="playtime_sort_options">
-        <item>@string/playtime_sort_default</item>
-        <item>@string/playtime_sort_asc</item>
-        <item>@string/playtime_sort_desc</item>
+
+    <string-array name="game_tags_style">
+        <item>Casual</item>
+        <item>Hardcore</item>
+        <item>StoryDriven</item>
+        <item>Addictive</item>
+        <item>HighReplayability</item>
     </string-array>
 </resources>

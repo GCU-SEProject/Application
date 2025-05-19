@@ -171,16 +171,7 @@ public class GameActivity extends AppCompatActivity {
 
         Log.d(TAG, "Searching games by tags: " + selectedTagsList.toString());
 
-<<<<<<< Updated upstream
-        Log.d(TAG, "Searching games - Query: '" + searchQuery +
-                "', Platform: '" + selectedPlatform +
-                "', Genre: '" + selectedGenre +
-                "', Sort: '" + selectedPlaytimeSortOrder + "'");
-
-        apiService.searchGames(searchQuery, selectedPlatform, selectedGenre, selectedPlaytimeSortOrder)
-=======
         apiService.searchGamesByTags(selectedTagsList)
->>>>>>> Stashed changes
                 .enqueue(new Callback<List<Game>>() {
                     @Override
                     public void onResponse(Call<List<Game>> call, Response<List<Game>> response) {
