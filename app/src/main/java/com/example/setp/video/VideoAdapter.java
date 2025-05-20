@@ -105,9 +105,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> 
         holder.ivVideoThumbnail.setOnClickListener(v -> {
             if (item.getVideoUrl() != null && !item.getVideoUrl().isEmpty()) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(item.getVideoUrl()));
-                if (intent.resolveActivity(context.getPackageManager()) != null) {
                     context.startActivity(intent);
-                }
             }
         });
     }
