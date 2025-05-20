@@ -5,4 +5,5 @@
     <color name="light_gray">#FFDDDDDD</color>
     <color name="medium_gray">#FFAAAAAA</color>
     <color name="dark_gray">#FF666666</color>
+    <color name="tag_text_color_video">#FF333333</color>
 </resources>

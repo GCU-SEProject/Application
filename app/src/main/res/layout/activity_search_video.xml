@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:fitsSystemWindows="true"
-    tools:context=".video.VideoActivity"> <!-- 컨텍스트 변경 -->
+    tools:context=".video.VideoActivity">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -29,15 +29,6 @@
             android:paddingStart="12dp"
             android:paddingEnd="12dp">
 
-            <ImageView
-                android:id="@+id/imgSearchIcon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_search"
-                app:tint="@color/dark_gray"
-                android:contentDescription="@string/search_icon_desc"
-                android:layout_marginEnd="8dp"/>
-
             <EditText
                 android:id="@+id/etSearchQuery"
                 android:layout_width="0dp"
@@ -50,23 +41,46 @@
                 android:background="@android:color/transparent"
                 android:paddingTop="16dp"
                 android:paddingBottom="16dp"/>
+
+            <ImageButton
+                android:id="@+id/searchVideoBtn"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_search"
+                android:contentDescription="@string/search_icon_desc"
+                android:background="@color/light_gray"
+                app:tint="@color/dark_gray"
+                android:layout_marginStart="8dp"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.card.MaterialCardView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        app:cardCornerRadius="0dp"
-        app:strokeColor="@color/black"
-        app:strokeWidth="1dp">
+        android:layout_marginEnd="24dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvSearchResults"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/list_item_video_result"/>
-    </com.google.android.material.card.MaterialCardView>
+            app:cardCornerRadius="0dp"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSearchResults"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/list_item_video_result"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <ProgressBar
+            android:id="@+id/progressBarSearch"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
 </LinearLayout>

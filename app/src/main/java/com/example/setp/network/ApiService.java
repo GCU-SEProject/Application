@@ -11,10 +11,10 @@ import retrofit2.http.Query;
 public interface ApiService {
 
 
-    @GET("/game-service/search/game")// API Gateway EndPoint
+    @GET("/game-service/search/game")// Game Query
     Call<List<Game>> searchGamesByTags(@Query("tag") List<String> tags);
 
-    @GET("/video-service/search/video")
-    Call<List<Video>> searchVideosByKeyword(@Query("keyword") List<String> keyword);
+    @GET("/video-service/search/video") // Video Query
+    Call<List<Video>> searchVideosByKeyword(@Query("keyword") String keyword);
 
 }
