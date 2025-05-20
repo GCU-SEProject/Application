@@ -38,21 +38,26 @@ public class VideoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_video);
-        setTitle(getString(R.string.title_video));
+        setTitle(getString(R.string.title_video)); // Set the activity title
 
-        apiService = RetrofitClient.getApiService();
+        apiService = RetrofitClient.getApiService(); // Initialize API service
 
+        // Initialize UI components
         etSearchQuery = findViewById(R.id.etSearchQuery);
         searchVideoBtn = findViewById(R.id.searchVideoBtn);
         rvSearchResults = findViewById(R.id.rvSearchResults);
         progressBarSearch = findViewById(R.id.progressBarSearch);
 
+        // Set up RecyclerView with adapter
         videoResultsList = new ArrayList<>();
         videoAdapter = new VideoAdapter(this, videoResultsList);
         rvSearchResults.setLayoutManager(new LinearLayoutManager(this));
         rvSearchResults.setAdapter(videoAdapter);
 
+        // Search button click listener
         searchVideoBtn.setOnClickListener(v -> performVideoSearch());
+
+        // Handle keyboard search action
         etSearchQuery.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 performVideoSearch();
@@ -62,6 +67,7 @@ public class VideoActivity extends AppCompatActivity {
         });
     }
 
+    // Perform video search with given keyword
     private void performVideoSearch() {
         String keyword = etSearchQuery.getText().toString().trim();
         if (keyword.isEmpty()) {
@@ -69,15 +75,18 @@ public class VideoActivity extends AppCompatActivity {
             return;
         }
 
+        // Show loading indicator
         progressBarSearch.setVisibility(View.VISIBLE);
         rvSearchResults.setVisibility(View.GONE);
 
         Log.d(TAG, "Searching videos with keyword: " + keyword);
 
+        // Make API request
         apiService.searchVideosByKeyword(keyword)
                 .enqueue(new Callback<List<Video>>() {
                     @Override
                     public void onResponse(Call<List<Video>> call, Response<List<Video>> response) {
+                        // Hide loading
                         progressBarSearch.setVisibility(View.GONE);
                         rvSearchResults.setVisibility(View.VISIBLE);
 
@@ -86,9 +95,10 @@ public class VideoActivity extends AppCompatActivity {
                             if (videos.isEmpty()) {
                                 Toast.makeText(VideoActivity.this, "검색 결과가 없습니다.", Toast.LENGTH_SHORT).show();
                             }
-                            videoAdapter.updateData(videos);
+                            videoAdapter.updateData(videos); // Update RecyclerView
                             Log.d(TAG, "Search successful. Videos found: " + videos.size());
                         } else {
+                            // API error
                             Toast.makeText(VideoActivity.this, "검색에 실패했습니다 (코드: " + response.code() + ")", Toast.LENGTH_LONG).show();
                             Log.e(TAG, "Search failed. Code: " + response.code() + ", Message: " + response.message());
                         }
@@ -96,6 +106,7 @@ public class VideoActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<List<Video>> call, Throwable t) {
+                        // Network error
                         progressBarSearch.setVisibility(View.GONE);
                         rvSearchResults.setVisibility(View.VISIBLE);
                         Toast.makeText(VideoActivity.this, "네트워크 오류: " + t.getMessage(), Toast.LENGTH_LONG).show();
