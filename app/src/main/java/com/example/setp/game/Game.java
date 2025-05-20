@@ -21,13 +21,13 @@ public class Game {
     @SerializedName("link")
     private String link;
 
-    @SerializedName("age_rating")
+    @SerializedName("ageRating")
     private int ageRating;
 
     @SerializedName("price")
     private int price;
 
-    @SerializedName("release_date")
+    @SerializedName("releaseDate")
     private String releaseDate;
 
     @SerializedName("description")
