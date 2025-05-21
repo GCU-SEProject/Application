@@ -1,31 +1,26 @@
 package com.example.setp.encyclopedia;
 
 import com.google.gson.annotations.SerializedName;
-
-import java.util.List;
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
-@Data // @Getter, @Setter, @RequiredArgsConstructor, @ToString, @EqualsAndHashCode
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Encyclopedia {
-    @SerializedName("lastBuildDate")
-    private String lastBuildDate;
 
-    @SerializedName("total")
-    private int total;
+    @SerializedName("title")
+    private String title;
 
-    @SerializedName("start")
-    private int start;
+    @SerializedName("link")
+    private String link;
 
-    @SerializedName("display")
-    private String display;
+    @SerializedName("description")
+    private String description;
 
-    @SerializedName("items")
-    private List<String> items;
+    @SerializedName("thumbnail")
+    private String thumbnail;
 
     private boolean expanded = false;
 }
