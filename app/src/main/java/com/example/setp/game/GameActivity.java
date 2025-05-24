@@ -168,7 +168,7 @@ public class GameActivity extends AppCompatActivity {
 
         Log.d(TAG, "Searching games by tags: " + selectedTagsList.toString());
 
-        apiService.searchGamesByTags(selectedTagsList)
+        apiService.searchGames(selectedTagsList)
                 .enqueue(new Callback<List<Game>>() {
                     @Override
                     public void onResponse(Call<List<Game>> call, Response<List<Game>> response) {

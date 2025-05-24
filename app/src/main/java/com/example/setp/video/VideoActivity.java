@@ -82,7 +82,7 @@ public class VideoActivity extends AppCompatActivity {
         Log.d(TAG, "Searching videos with keyword: " + keyword);
 
         // Make API request
-        apiService.searchVideosByKeyword(keyword)
+        apiService.searchVideos(keyword)
                 .enqueue(new Callback<List<Video>>() {
                     @Override
                     public void onResponse(Call<List<Video>> call, Response<List<Video>> response) {
