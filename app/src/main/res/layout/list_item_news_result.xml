@@ -1,6 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvNewsItem"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="12dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/llNewsItemContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvNewsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17sp" 
+            android:textStyle="bold"
+            tools:text="뉴스 기사 제목이 여기에 표시됩니다. 두 줄까지 표시될 수 있습니다."
+            android:textColor="?attr/colorPrimary" 
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvNewsPubDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp" 
+            tools:text="yyyy-mm-dd hh:mm"
+            android:textColor="?android:attr/textColorSecondary"
+            android:layout_marginBottom="8dp"/> 
+
+        <LinearLayout
+            android:id="@+id/llNewsDetailInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/tvNewsDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                tools:text="뉴스 기사에 대한 간략한 내용이 여기에 표시됩니다. 최대 다섯 줄까지 보일 수 있습니다."
+                android:textColor="?android:attr/textColorSecondary"
+                android:maxLines="5"
+                android:ellipsize="end"
+                android:layout_marginBottom="10dp"/> 
+
+            <TextView
+                android:id="@+id/tvNewsLink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp" 
+                tools:text="뉴스 링크: https://n.news.naver.com/..."
+                android:autoLink="web"
+                android:textColorLink="@color/accentBlue" 
+                android:layout_marginBottom="6dp"/> 
+
+            <TextView
+                android:id="@+id/tvNewsOriginalLink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp" 
+                tools:text="원본 링크: https://xxx.yyynews.com/..."
+                android:autoLink="web"
+                android:textColorLink="@color/accentBlue" 
+                android:layout_marginBottom="6dp"/> 
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_marginTop="6dp"> 
+                <LinearLayout
+                    android:id="@+id/llNewsTagsContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"/>
+            </HorizontalScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

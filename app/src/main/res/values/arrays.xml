@@ -56,4 +56,12 @@
         <item>Addictive</item>
         <item>HighReplayability</item>
     </string-array>
+
+    <string-array name="news_tags">
+        <item>POLITICS</item>
+        <item>ECONOMY</item>
+        <item>SPORTS</item>
+        <item>IT</item>
+        <item>ENTERTAINMENT</item>
+    </string-array>
 </resources>

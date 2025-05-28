@@ -2,7 +2,21 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="light_gray">#FFDDDDDD</color>
-    <color name="medium_gray">#FFAAAAAA</color>
-    <color name="dark_gray">#FF666666</color>
+
+    <!-- Blue Theme Colors -->
+    <color name="primaryBlue">#FF3F51B5</color> <!-- Indigo -->
+    <color name="primaryDarkBlue">#FF303F9F</color> <!-- Dark Indigo -->
+    <color name="accentBlue">#FF448AFF</color> <!-- Blue A200 -->
+    <color name="lightPrimaryBlue">#FFC5CAE9</color> <!-- Light Indigo -->
+
+    <color name="textColorPrimary">#FF212121</color> <!-- Almost Black -->
+    <color name="textColorSecondary">#FF757575</color> <!-- Medium Gray -->
+    <color name="dividerColor">#FFBDBDBD</color> <!-- Light Gray -->
+
+    <!-- Existing grays - adjusted for consistency if needed, or kept if distinct -->
+    <color name="light_gray">#FFF5F5F5</color> <!-- Lighter gray for backgrounds -->
+    <color name="medium_gray">#FF9E9E9E</color> <!-- Kept for general use -->
+    <color name="dark_gray">#FF616161</color> <!-- Kept for darker elements -->
+
+    <color name="tag_text_color_video">#FF333333</color> <!-- Can be reviewed later if it clashes -->
 </resources>

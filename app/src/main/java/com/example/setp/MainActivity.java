@@ -2,7 +2,7 @@ package com.example.setp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
+// import android.widget.Toast; // Toast는 현재 사용 안 함
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,16 +10,17 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.setp.apifeedback.ApiFeedbackActivity;
 import com.example.setp.encyclopedia.EncyclopediaActivity;
 import com.example.setp.game.GameActivity;
 import com.example.setp.news.NewsActivity;
 import com.example.setp.video.VideoActivity;
-import com.google.android.material.button.MaterialButton;
+// import com.google.android.material.button.MaterialButton; // MaterialButton 대신 CardView 사용
+import com.google.android.material.card.MaterialCardView; // MaterialCardView 임포트
 
 public class MainActivity extends AppCompatActivity {
 
-    private MaterialButton btnGame, btnEncyclopedia, btnVideo, btnNews, btnApi, btnOption;
+    // 변수 타입을 MaterialCardView로 변경
+    private MaterialCardView btnGameCard, btnEncyclopediaCard, btnVideoCard, btnNewsCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,18 +33,16 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        btnGame = findViewById(R.id.btnGame);
-        btnEncyclopedia = findViewById(R.id.btnEncyclopedia);
-        btnVideo = findViewById(R.id.btnVideo);
-        btnNews = findViewById(R.id.btnNews);
-        btnApi = findViewById(R.id.btnApi);
-        btnOption = findViewById(R.id.btnOption);
+        // ID를 새로운 카드 ID로 변경
+        btnGameCard = findViewById(R.id.btnGameCard);
+        btnEncyclopediaCard = findViewById(R.id.btnEncyclopediaCard);
+        btnVideoCard = findViewById(R.id.btnVideoCard);
+        btnNewsCard = findViewById(R.id.btnNewsCard);
 
-        btnGame.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, GameActivity.class)));
-        btnEncyclopedia.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, EncyclopediaActivity.class)));
-        btnVideo.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, VideoActivity.class)));
-        btnNews.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, NewsActivity.class)));
-        btnApi.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ApiFeedbackActivity.class)));
-        btnOption.setOnClickListener(v -> Toast.makeText(MainActivity.this, getString(R.string.option_toast_message), Toast.LENGTH_SHORT).show());
+        // 클릭 리스너 설정
+        btnGameCard.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, GameActivity.class)));
+        btnEncyclopediaCard.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, EncyclopediaActivity.class)));
+        btnVideoCard.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, VideoActivity.class)));
+        btnNewsCard.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, NewsActivity.class)));
     }
 }

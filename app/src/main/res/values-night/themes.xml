@@ -1,7 +1,32 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base application theme for dark mode. -->
     <style name="Base.Theme.SETP" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryDarkBlue</item> <!-- Using a darker blue for primary in dark mode -->
+        <item name="colorPrimaryVariant">@color/primaryBlue</item> <!-- A slightly lighter variant for dark mode -->
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/accentBlue</item>
+        <item name="colorOnSecondary">@color/black</item> <!-- Text on accent color might need to be dark for contrast -->
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:windowBackground">#FF121212</item> <!-- Standard dark background -->
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/medium_gray</item> <!-- Lighter gray for secondary text -->
+        <item name="dividerHorizontal">@color/dark_gray</item> <!-- Darker divider -->
+        <item name="colorSurface">#FF1E1E1E</item> <!-- Surface color for cards, dialogs etc. -->
+        <item name="colorOnSurface">@color/white</item>
+    </style>
+
+    <!-- Theme.SETP will inherit from Base.Theme.SETP -->
+    <!-- <style name="Theme.SETP" parent="Base.Theme.SETP" /> -->
+
+    <!-- Specific style for buttons in dark mode if needed, or it can inherit/fallback -->
+    <style name="App.Button.Blue.Dark" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="backgroundTint">@color/accentBlue</item>
+        <item name="android:textColor">@color/white</item> <!-- Text color might need to be black depending on accentBlue brightness -->
+        <item name="strokeColor">@color/primaryBlue</item>
+        <item name="rippleColor">@color/lightPrimaryBlue</item>
     </style>
 </resources>
