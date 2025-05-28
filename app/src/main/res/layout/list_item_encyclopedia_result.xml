@@ -26,18 +26,18 @@
             android:id="@+id/llEncyclopediaSummaryInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-            <com.google.android.material.imageview.ShapeableImageView 
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivEncyclopediaThumbnail"
-                android:layout_width="88dp" 
-                android:layout_height="88dp" 
-                android:scaleType="centerCrop"
-                tools:srcCompat="@tools:sample/backgrounds/scenic"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:layout_marginEnd="16dp"
                 android:contentDescription="백과사전 썸네일"
-                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium" 
-                android:layout_marginEnd="16dp"/>
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -49,23 +49,23 @@
                     android:id="@+id/tvEncyclopediaTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="17sp" 
-                    android:textStyle="bold"
-                    tools:text=" 매우 긴 백과사전 항목 제목이 여기에 표시됩니다. 두 줄까지 표시될 수 있습니다."
-                    android:textColor="?attr/colorPrimary" 
-                    android:maxLines="2"
+                    android:layout_marginBottom="6dp"
                     android:ellipsize="end"
-                    android:layout_marginBottom="6dp"/> 
+                    android:maxLines="2"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    tools:text=" 매우 긴 백과사전 항목 제목이 여기에 표시됩니다. 두 줄까지 표시될 수 있습니다." />
 
                 <TextView
                     android:id="@+id/tvEncyclopediaDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    tools:text="백과사전 항목에 대한 간단한 설명이 여기에 들어갑니다. 최대 세 줄까지 보일 수 있습니다."
-                    android:textColor="?android:attr/textColorSecondary"
+                    android:ellipsize="end"
                     android:maxLines="3"
-                    android:ellipsize="end"/>
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="14sp"
+                    tools:text="백과사전 항목에 대한 간단한 설명이 여기에 들어갑니다. 최대 세 줄까지 보일 수 있습니다." />
             </LinearLayout>
         </LinearLayout>
 
@@ -73,19 +73,19 @@
             android:id="@+id/llEncyclopediaDetailInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:orientation="vertical"
             android:visibility="gone"
-            android:layout_marginTop="12dp" 
             tools:visibility="visible">
 
             <TextView
                 android:id="@+id/tvEncyclopediaLink"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="13sp" 
-                tools:text="TempLink: https://temp.abcde.com/..."
                 android:autoLink="web"
-                android:textColorLink="@color/accentBlue"/> 
+                android:textColorLink="@color/accentBlue"
+                android:textSize="13sp"
+                tools:text="TempLink: https://temp.abcde.com/..." />
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
