@@ -1,133 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingTop="16dp"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp"
-    android:paddingBottom="0dp"
-    android:fitsSystemWindows="true"
-    tools:context=".news.NewsActivity">
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
 
-    <com.google.android.material.card.MaterialCardView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="12dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:cardCornerRadius="28dp"
-        app:cardElevation="4dp"
-        app:strokeColor="@color/dividerColor"
-        app:strokeWidth="1dp">
+        android:layout_height="wrap_content" 
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp" 
+        tools:context=".news.NewsActivity">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="4dp"
+            app:strokeColor="@color/dividerColor"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"
+                android:paddingEnd="8dp"
+                android:background="@android:color/transparent">
+
+                <EditText
+                    android:id="@+id/etSearchKeywordNews"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:hint="검색어를 입력하세요..."
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:imeOptions="actionSearch"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColorHint="@color/medium_gray"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="16sp"/>
+
+                <ImageButton
+                    android:id="@+id/searchNewsBtn"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_search"
+                    android:contentDescription="@string/search_icon_desc"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    app:tint="@color/primaryBlue"
+                    android:padding="12dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:paddingStart="20dp"
-            android:paddingEnd="8dp"
-            android:background="@android:color/transparent">
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp">
 
-            <EditText
-                android:id="@+id/etSearchKeywordNews"
-                android:layout_width="0dp"
-                android:layout_height="56dp"
-                android:layout_weight="1"
-                android:hint="검색어를 입력하세요..."
-                android:inputType="text"
-                android:maxLines="1"
-                android:imeOptions="actionSearch"
-                android:background="@android:color/transparent"
-                android:paddingStart="0dp"
-                android:paddingEnd="12dp"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:textColorHint="@color/medium_gray"
-                android:textColor="@color/textColorPrimary"
-                android:textSize="16sp"/>
-
-            <ImageButton
-                android:id="@+id/searchNewsBtn"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/ic_search"
-                android:contentDescription="@string/search_icon_desc"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                app:tint="@color/primaryBlue"
-                android:padding="12dp"/>
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp">
-
-        <Button
-            android:id="@+id/btnSelectNewsTags"
-            style="@style/App.Button.Blue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="태그 선택"
-            android:minHeight="48dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            app:cornerRadius="24dp"
-            android:layout_marginEnd="12dp"/>
-
-        <HorizontalScrollView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:scrollbars="none">
-            <com.google.android.material.chip.ChipGroup
-                android:id="@+id/chipGroupSelectedNewsTags"
+            <Button
+                android:id="@+id/btnSelectNewsTags"
+                style="@style/App.Button.Blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.ChipGroup"
-                app:chipSpacingHorizontal="8dp"
-                app:singleLine="true"/>
-        </HorizontalScrollView>
-    </LinearLayout>
+                android:text="태그 선택"
+                android:minHeight="48dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                app:cornerRadius="24dp"
+                android:layout_marginEnd="12dp"/>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp">
+            <HorizontalScrollView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scrollbars="none">
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupSelectedNewsTags"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.ChipGroup"
+                    app:chipSpacingHorizontal="8dp"
+                    app:singleLine="true"/>
+            </HorizontalScrollView>
+        </LinearLayout>
 
-        <com.google.android.material.card.MaterialCardView
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:cardCornerRadius="12dp"
-            app:strokeColor="@color/dividerColor"
-            app:strokeWidth="1dp"
-            android:backgroundTint="@color/white">
+            android:layout_height="wrap_content" 
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvNewsSearchResults"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:listitem="@layout/list_item_news_result"/>
-        </com.google.android.material.card.MaterialCardView>
+                android:layout_height="wrap_content" 
+                app:cardCornerRadius="12dp"
+                app:strokeColor="@color/dividerColor"
+                app:strokeWidth="1dp"
+                android:backgroundTint="@color/white">
 
-        <ProgressBar
-            android:id="@+id/progressBarSearchNews"
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:visibility="gone" />
-    </FrameLayout>
-</LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvNewsSearchResults"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" 
+                    android:nestedScrollingEnabled="false" 
+                    tools:listitem="@layout/list_item_news_result"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <ProgressBar
+                android:id="@+id/progressBarSearchNews"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
