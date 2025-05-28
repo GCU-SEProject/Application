@@ -1,115 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/llVideoItemContainer"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvVideoItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="12dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="12dp"
     android:clickable="true"
     android:focusable="true"
-    android:background="?attr/selectableItemBackground">
+    android:foreground="?attr/selectableItemBackground">
 
     <LinearLayout
-        android:id="@+id/llVideoSummaryInfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
-
-        <ImageView
-            android:id="@+id/ivVideoThumbnail"
-            android:layout_width="120dp"
-            android:layout_height="90dp"
-            android:scaleType="centerCrop"
-            tools:srcCompat="@tools:sample/backgrounds/scenic"
-            android:contentDescription="VideoThumbnail"
-            android:layout_marginEnd="12dp"
-            android:clickable="true"
-            android:focusable="true"/>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tvVideoTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                tools:text="VideoName"
-                android:textColor="?android:attr/textColorPrimary"
-                android:maxLines="2"
-                android:ellipsize="end"
-                android:layout_marginBottom="4dp"/>
-
-            <TextView
-                android:id="@+id/tvVideoViewCount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"
-                tools:text="ViewCount: 1234567"
-                android:textColor="?android:attr/textColorSecondary"/>
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/llVideoDetailInfo"
+        android:id="@+id/llVideoItemContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:visibility="gone"
-        android:layout_marginTop="8dp"
-        tools:visibility="visible">
+        android:padding="16dp">
 
-        <TextView
-            android:id="@+id/tvVideoFullDescription"
+        <LinearLayout
+            android:id="@+id/llVideoSummaryInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            tools:text="Video Description"
-            android:textColor="?android:attr/textColorSecondary"
-            android:layout_marginBottom="4dp"/>
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
-        <TextView
-            android:id="@+id/tvVideoUploadTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="12sp"
-            tools:text="Upload: 2023-10-26"
-            android:textColor="?android:attr/textColorSecondary"
-            android:layout_marginBottom="4dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tag:"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="2dp"/>
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="none">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivVideoThumbnail"
+                android:layout_width="120dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@tools:sample/backgrounds/scenic"
+                android:contentDescription="VideoThumbnail"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium" 
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <LinearLayout
-                android:id="@+id/llVideoTagsContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvVideoTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp" 
+                    android:textStyle="bold"
+                    tools:text="매우 긴 비디오 제목이 여기에 들어갑니다. 두 줄까지 표시됩니다."
+                    android:textColor="?attr/colorPrimary" 
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:layout_marginBottom="6dp"/> 
+
+                <TextView
+                    android:id="@+id/tvVideoViewCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp" 
+                    tools:text="조회수: 123,456회"
+                    android:textColor="?android:attr/textColorSecondary"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llVideoDetailInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="12dp" 
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/tvVideoFullDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                tools:text="비디오에 대한 상세 설명이 여기에 표시됩니다. 필요한 경우 여러 줄로 표시될 수 있습니다."
+                android:textColor="?android:attr/textColorSecondary"
+                android:layout_marginBottom="8dp"/> 
+
+            <TextView
+                android:id="@+id/tvVideoUploadTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp" 
+                tools:text="게시일: 2023-10-26"
+                android:textColor="?android:attr/textColorSecondary"
+                android:layout_marginBottom="8dp"/> 
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:text="태그:"
+                android:textSize="13sp" 
+                android:textStyle="bold"
+                android:textColor="@color/textColorPrimary" 
+                android:layout_marginBottom="4dp"/> 
 
-            </LinearLayout>
-        </HorizontalScrollView>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
 
+                <LinearLayout
+                    android:id="@+id/llVideoTagsContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
     </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/light_gray"
-        android:layout_marginTop="8dp"/>
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,6 +1,5 @@
 package com.example.setp.network;
 
-import com.example.setp.apifeedback.ApiFeedbackActivity;
 import com.example.setp.encyclopedia.Encyclopedia; //Encyclopedia import
 import com.example.setp.game.Game; // Game import
 import com.example.setp.news.NewsResponse; // News import
@@ -21,7 +20,7 @@ public interface ApiService {
     Call<List<Video>> searchVideos(@Query("keyword") String keyword);
 
     @GET("/encyclopedia-service/search/encyclopedia") // Encyclopedia Query
-    Call<List<Encyclopedia>> searchEncycloPedia(@Query("keyword") String keyword);
+    Call<List<Encyclopedia>> searchEncyclopedia(@Query("keyword") String keyword);
 
     @GET("/news-service/api/v1/news/search") // News Query
     Call<NewsResponse> searchNews(
@@ -29,8 +28,5 @@ public interface ApiService {
             @Query("tags") List<String> tags,
             @Query("start") Integer start,
             @Query("display") Integer display);
-
-    @GET("/monitor-service/usage")
-    Call<List<ApiFeedbackActivity>> searchUsage(@Query("") List<String> usage);
 
 }

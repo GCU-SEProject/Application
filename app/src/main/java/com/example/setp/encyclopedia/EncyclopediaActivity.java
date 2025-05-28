@@ -89,7 +89,7 @@ public class EncyclopediaActivity extends AppCompatActivity {
         Log.d(TAG, "Searching encyclopedia with keyword: " + keyword);
 
         // Call API to search encyclopedia
-        apiService.searchEncycloPedia(keyword)
+        apiService.searchEncyclopedia(keyword)
                 .enqueue(new Callback<List<Encyclopedia>>() {
                     @Override
                     public void onResponse(Call<List<Encyclopedia>> call, Response<List<Encyclopedia>> response) {

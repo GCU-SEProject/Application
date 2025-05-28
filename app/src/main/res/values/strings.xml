@@ -5,8 +5,6 @@
     <string name="main_encyclopedia">ENCYCLOPEDIA</string>
     <string name="main_video">VIDEO</string>
     <string name="main_news">NEWS</string>
-    <string name="main_api">API</string>
-    <string name="main_option">OPTION</string>
 
     <string name="search_hint">검색어를 입력하세요...</string>
     <string name="tag_category_genre">장르 태그 선택</string>
@@ -26,14 +24,6 @@
     <string name="game_search_results_list_desc">게임 검색 결과 목록</string>
     <string name="search_icon_desc">검색 아이콘</string>
 
-    <string name="api_feedback_title">API USAGE FEEDBACK</string>
-    <string name="naver_open_api_left">NAVER OPEN API LEFT%</string>
-    <string name="youtube_data_api_left">YOUTUBE DATA API LEFT%</string>
-    <string name="game_search_api_left">GAME SEARCH API LEFT%</string>
-    <string name="news_search_api_left">NEWS SEARCH API LEFT%</string>
-    <string name="request_count">request count = %1$d</string>
-    <string name="remaining_quota">remaining quota = %1$d</string>
-
     <string name="placeholder_title">항목 제목</string>
     <string name="placeholder_description">항목에 대한 간단한 설명입니다.</string>
 
@@ -41,6 +31,4 @@
     <string name="title_video">비디오 검색</string>
     <string name="title_news">뉴스 검색</string>
     <string name="title_game_search">게임 검색</string>
-    <string name="title_api_feedback">API 사용량 피드백</string>
-    <string name="option_toast_message">옵션 기능은 준비 중입니다.</string>
 </resources>
